@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./CountryList.module.css";
+import styles from "./CityList.module.css";
 import Spinner from "./Spinner";
 import CityItem from "./CityItem";
 import Message from "./Message";
 
-function CountryList({ cities, isLoading }) {
+function CityList({ cities, isLoading }) {
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -12,7 +12,7 @@ function CountryList({ cities, isLoading }) {
       <Message message="Add your first City by clicking on a city on the map" />
     );
   return (
-    <ul className={styles.countryList}>
+    <ul className={styles.cityList}>
       {cities.map((city) => (
         <CityItem city={city} key={city.id} />
       ))}
@@ -20,4 +20,4 @@ function CountryList({ cities, isLoading }) {
   );
 }
 
-export default CountryList;
+export default CityList;
