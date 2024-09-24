@@ -33,6 +33,7 @@ function Form() {
   const [geocodingError, setGeocodingError] = useState("");
 
   useEffect(() => {
+    if (!lat && !lng) return;
     const fetchCityData = async () => {
       try {
         setIsLoadingGeocoding(true);
@@ -57,12 +58,18 @@ function Form() {
     fetchCityData();
   }, [lat, lng]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   if (isLoadingGeocoding) return <Spinner />;
 
+  if (!lat && !lng)
+    return <Message message="Start by clicking somewhere on the map" />;
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
