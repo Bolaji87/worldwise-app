@@ -77,7 +77,7 @@ const CitiesProvider = ({ children }) => {
     fetchCities();
   }, []);
 
-  const getCity = useCallback(() => {
+  const getCity = useCallback(
     async (id) => {
       // console.log(id, currentCity);
       if (Number(id) === currentCity.id) return;
@@ -92,8 +92,9 @@ const CitiesProvider = ({ children }) => {
           payload: "There was an error loading cities...",
         });
       }
-    };
-  }, [currentCity.id]);
+    },
+    [currentCity.id]
+  );
 
   const createCity = async (newCity) => {
     dispatch({ type: "loading" });
