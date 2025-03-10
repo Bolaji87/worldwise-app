@@ -59,6 +59,18 @@
         "lng": "11.938257892300907"
       },
       "id": 98443199
+    },
+    {
+      "cityName": "Fuenlabrada de los Montes",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-03-10T13:08:51.863Z",
+      "notes": "uu",
+      "position": {
+        "lat": "39.06184913429154",
+        "lng": "-4.855957031250001"
+      },
+      "id": 98443200
     }
   ]
 }
